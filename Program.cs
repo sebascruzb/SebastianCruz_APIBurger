@@ -1,5 +1,10 @@
 ﻿using SebastianCruz_APIBurger.Controllers;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using SebastianCruz_APIBurger.Data;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<SebastianCruz_APIBurgerContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("SebastianCruz_APIBurgerContext") ?? throw new InvalidOperationException("Connection string 'SebastianCruz_APIBurgerContext' not found.")));
 
 // Add services to the container.
 
@@ -24,5 +29,6 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.MapBurgerEndpoints();
+
 
 app.Run();
