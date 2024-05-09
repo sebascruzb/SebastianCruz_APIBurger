@@ -30,5 +30,7 @@ app.MapControllers();
 
 app.MapBurgerEndpoints();
 
+app.MapPromoEndpoints();
+
 
 app.Run();

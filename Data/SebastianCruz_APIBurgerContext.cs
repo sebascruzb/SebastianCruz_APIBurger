@@ -15,5 +15,6 @@ namespace SebastianCruz_APIBurger.Data
         }
 
         public DbSet<SebastianCruz_APIBurger.Data.Models.Burger> Burger { get; set; } = default!;
+        public DbSet<SebastianCruz_APIBurger.Data.Models.Promo> Promo { get; set; } = default!;
     }
 }
